@@ -12,6 +12,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
+
+import routesConfig from '~/config/routes';
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assests/images';
@@ -91,7 +94,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img src={images.logo} alt="TikTok" />
+                <Link to={routesConfig.home} className={cx('logo-link')}>
+                    <img src={images.logo} alt="TikTok" />
+                </Link>
 
                 <Search />
 
@@ -125,7 +130,7 @@ function Header() {
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
                             <Image
-                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ace9da506d77b3f7d6b1a8bade7a8488~c5_720x720.jpeg?x-expires=1665676800&x-signature=c09WsY9fD%2F0Re3AZcMN6NskY%2F5k%3D"
+                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ace9da506d77b3f7d6b1a8bade7a8488~c5_100x100.jpeg?x-expires=1665954000&x-signature=L4Coc%2BjDiee47grlh8ASUJoElMI%3D"
                                 className={cx('user-avatar')}
                                 alt="QuocPham"
                             />
